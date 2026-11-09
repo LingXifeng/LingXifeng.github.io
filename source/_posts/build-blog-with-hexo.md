@@ -1,8 +1,13 @@
 ---
 title: 用 Hexo + GitHub Pages 搭建免费博客
+categories:
+  - 技术
+tags:
+  - Hexo
+  - GitHub
+  - 博客
+abbrlink: 13dd777f
 date: 2026-11-09 16:30:00
-categories: [技术]
-tags: [Hexo, GitHub, 博客]
 ---
 
 这篇文章记录一下用 Hexo + GitHub Pages 搭建博客的过程，给同样想建博客的朋友参考。

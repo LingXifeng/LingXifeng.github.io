@@ -1,10 +1,15 @@
 ---
 title: 数学公式与流程图示例
-date: 2026-11-09 17:00:00
-categories: [技术]
-tags: [Hexo, LaTeX, Mermaid]
+categories:
+  - 技术
+tags:
+  - Hexo
+  - LaTeX
+  - Mermaid
 math: true
 mermaid: true
+abbrlink: 30b736e8
+date: 2026-11-09 17:00:00
 ---
 
 这篇文章展示博客支持的数学公式和流程图功能。

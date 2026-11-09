@@ -1,8 +1,11 @@
 ---
 title: 欢迎来到我的博客
+categories:
+  - 公告
+tags:
+  - 随笔
+abbrlink: b250e9bb
 date: 2026-11-09 16:00:00
-categories: [公告]
-tags: [随笔]
 ---
 
 欢迎来到我的个人博客！这里是我记录学习笔记和技术想法的地方。

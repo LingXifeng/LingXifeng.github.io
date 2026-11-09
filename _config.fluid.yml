@@ -6,6 +6,26 @@ blog_title: LingXifeng
 favicon: /img/fluid.png
 apple_touch_icon: /img/fluid.png
 
+# ---------- canonical 链接 (SEO) ----------
+# 告诉搜索引擎文章的权威地址，避免重复内容惩罚
+canonical:
+  enable: true
+
+# ---------- 访问分析 ----------
+# 需要填写真实的 ID 才能生效，下方两种任选其一
+# Google Analytics: https://support.google.com/analytics/answer/9744165
+# Umami (自建): 在 web_analytics 中配置 umami 参数
+web_analytics:
+  enable: false  # 拿到 ID 后改为 true
+  follow_dnt: true
+  google:
+    measurement_id:  # 填入 Google Analytics 的 G-XXXXXXXXXX
+  leancloud:
+    app_id:
+    app_key:
+    server_url:
+    path: window.location.pathname
+
 # 导航栏
 navbar:
   blog_title: LingXifeng
@@ -16,6 +36,9 @@ navbar:
     - { key: "标签", link: "/tags/", icon: "iconfont icon-tag" }
     - { key: "友链", link: "/links/", icon: "iconfont icon-link" }
     - { key: "关于", link: "/about/", icon: "iconfont icon-user" }
+  # 导航栏毛玻璃效果（实验性功能）
+  ground_glass:
+    enable: true
 
 # ---------- 趣味功能 ----------
 fun_features:
@@ -150,14 +173,14 @@ post:
     specific: true
     options: { theme: 'default' }
 
-  # 评论系统 - Gitalk
-  # 需要你在 GitHub 创建 OAuth App 后填入 clientID 和 clientSecret
-  # 创建地址: https://github.com/settings/applications/new
-  # Homepage URL: https://lingxifeng.github.io
-  # Callback URL: https://lingxifeng.github.io
+  # 评论系统
+  # 可选值：gitalk | giscus | valine | utterances | disqus | waline | twikoo 等
+  # 推荐用 giscus（基于 GitHub Discussions，不需要 Client Secret）
+  # 用 giscus 前需：1) 仓库开启 Discussions  2) 安装 giscus app  3) 填下方 giscus 配置
+  # 然后把 type 改为 giscus 即可
   comments:
     enable: true
-    type: gitalk
+    type: gitalk    # 想用 Giscus 时改为 giscus
 
 # ---------- Gitalk 评论 ----------
 gitalk:
@@ -173,6 +196,23 @@ gitalk:
   distractionFreeMode: false
   createIssueManually: true
   proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
+
+# ---------- Giscus 评论（推荐，基于 GitHub Discussions）----------
+# 配置步骤：
+# 1. 在 GitHub 仓库 Settings → Features 勾选 Discussions
+# 2. 访问 https://github.com/apps/giscus/installations/new 安装 giscus app 到本仓库
+# 3. 访问 https://giscus.app 填入仓库信息，生成下方配置参数
+# 4. 把上方 post.comments.type 改为 giscus
+giscus:
+  repo: LingXifeng/LingXifeng.github.io
+  repo_id:              # 在 https://giscus.app 生成
+  category: Announcements
+  category_id:          # 在 https://giscus.app 生成
+  mapping: pathname
+  reactions_enabled: 1
+  theme: light
+  lang: zh-CN
+  input_position: top   # 评论框在上方
 
 # ---------- 归档 ----------
 archive:
@@ -230,6 +270,10 @@ footer:
     |
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="noopener">Fluid Theme</a>
   '
+  # 页脚展示全站 PV / UV 统计
+  statistics:
+    enable: true
+    source: "busuanzi"    # 不需要额外服务；想要更稳定可用 leancloud/umami
 
 # ---------- 自定义 ----------
 custom_css: []

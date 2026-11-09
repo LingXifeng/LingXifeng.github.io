@@ -12,11 +12,17 @@ timezone: 'Asia/Shanghai'
 
 # URL
 url: https://lingxifeng.github.io
-permalink: :year/:month/:day/:title/
+# 使用 abbrlink 生成永久链接，改标题/日期不会导致 URL 变化
+permalink: posts/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: true
   trailing_html: true
+
+# abbrlink 永久链接配置
+abbrlink:
+  alg: crc32      # 算法: crc16 | crc32
+  rep: hex        # 表示: dec | hex
 
 # Directory
 source_dir: source
@@ -38,7 +44,8 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+# 开启文章资源文件夹：hexo new "标题" 时自动创建同名文件夹放图片
+post_asset_folder: true
 relative_link: false
 future: true
 syntax_highlighter: highlight.js
@@ -103,9 +110,58 @@ feed:
   path: /atom.xml
   limit: 20
   content: true
-  content_limit: 200
+  content_limit: 2000       # 调大：让 RSS 阅读器能看到几乎全文
   content_limit_delim: ' '
 
 # Sitemap
 sitemap:
   path: /sitemap.xml
+
+# ---------- robots.txt (hexo-generator-robotstxt) ----------
+# 生成 robots.txt 指引搜索引擎爬虫
+robotstxt:
+  robotstxt:
+    body: |
+      User-agent: *
+      Allow: /
+      Disallow: /js/
+      Disallow: /css/
+      Disallow: /img/
+      Sitemap: https://lingxifeng.github.io/sitemap.xml
+
+# ---------- GitHub Emoji (hexo-filter-github-emojis) ----------
+# 在 Markdown 中写 :rocket: :bug: :tada: 等自动渲染为 emoji
+githubEmojis:
+  enable: true
+  className: github-emoji
+  unicode: false        # false = 用图片，true = 用 Unicode 字符
+  localEmojis:
+
+# ---------- HTML 压缩 (hexo-html-minifier) ----------
+html_minifier:
+  silent: true
+  exclude:
+    - '**/atom.xml'
+    - '**/sitemap.xml'
+    - '**/local-search.xml'
+
+# ---------- CSS 压缩 (hexo-clean-css) ----------
+clean_css:
+  exclude:
+    - '**/atom.xml'
+    - '**/sitemap.xml'
+
+# ---------- 文章加密 (hexo-blog-encrypt) ----------
+# 在文章 Front-matter 中加 password: xxx 即可加密该篇文章
+encrypt:
+  abstract: 这篇文章已加密，请输入密码查看。
+  message: 请输入密码：
+  wrong_pass_message: 抱歉，密码不对，请重试。
+  wrong_hash_message: 抱歉，文章内容校验失败，请检查。
+
+# ---------- 外链 nofollow (hexo-filter-nofollow) ----------
+# 告诉搜索引擎不要追踪外部链接，提升 SEO
+nofollow:
+  enable: true
+  exclude:
+    - lingxifeng.github.io    # 自己的域名不加 nofollow
