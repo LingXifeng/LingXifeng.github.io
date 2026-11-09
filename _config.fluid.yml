@@ -3,6 +3,8 @@
 
 # ---------- 全局 ----------
 blog_title: LingXifeng
+favicon: /img/fluid.png
+apple_touch_icon: /img/fluid.png
 
 # 导航栏
 navbar:
@@ -12,7 +14,47 @@ navbar:
     - { key: "归档", link: "/archives/", icon: "iconfont icon-archive" }
     - { key: "分类", link: "/categories/", icon: "iconfont icon-category" }
     - { key: "标签", link: "/tags/", icon: "iconfont icon-tag" }
+    - { key: "友链", link: "/links/", icon: "iconfont icon-link" }
     - { key: "关于", link: "/about/", icon: "iconfont icon-user" }
+
+# ---------- 趣味功能 ----------
+fun_features:
+  typing:
+    enable: true
+    typeSpeed: 70
+    cursorChar: "_"
+    loop: false
+    scope: []
+  anchorjs:
+    enable: true
+    element: h1,h2,h3,h4,h5,h6
+    placement: left
+    visible: hover
+    icon: ""
+  progressbar:
+    enable: true
+    height_px: 3
+    color: "#29d"
+    options: { showSpinner: false, trickleSpeed: 100 }
+
+# ---------- 暗黑模式 ----------
+dark_mode:
+  enable: true
+  default: auto
+
+# ---------- 懒加载 ----------
+lazyload:
+  enable: true
+  onlypost: false
+  loading: /img/loading.gif
+
+# ---------- 搜索 ----------
+search:
+  enable: true
+  path: /local-search.xml
+  generate_path: /local-search.xml
+  field: post
+  content: true
 
 # ---------- 首页 ----------
 index:
@@ -21,13 +63,9 @@ index:
   slogan:
     text: "保持好奇，持续学习"
     hitokoto: false
-
-  # 首页文章列表
   post_url: false
   post_default_bg:
     - /img/default.png
-
-  # 介绍板块
   intro:
     enable: true
     icons:
@@ -40,18 +78,101 @@ post:
   banner_img_height: "60"
   default_index_img: /img/default.png
 
-  # 目录
+  meta:
+    author:
+      enable: true
+    date:
+      enable: true
+      format: "LL a"
+    wordcount:
+      enable: true
+    min2read:
+      enable: true
+      awl: 2
+      wpm: 60
+    views:
+      enable: true
+      source: "busuanzi"
+
+  updated:
+    enable: true
+    date_format: "LL a"
+    relative: false
+
+  category_bar:
+    enable: true
+    specific: true
+    placement: left
+    post_order_by: "title"
+    post_limit: 0
+
   toc:
     enable: true
     placement: right
+    headingSelector: "h1,h2,h3,h4,h5,h6"
+    collapseDepth: 0
 
-  # 版权声明
   copyright:
     enable: true
-    content: '本文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 许可协议'
+    license: 'BY-NC-SA'
+    author:
+      enable: true
+    post_date:
+      enable: true
+      format: "LL"
+    update_date:
+      enable: true
+      format: "LL"
 
-  # 自定义版权
-  custom_copyright: {}
+  prev_next:
+    enable: true
+
+  image_caption:
+    enable: true
+
+  image_zoom:
+    enable: true
+    img_url_replace: ['', '']
+
+  footnote:
+    enable: true
+    header: ''
+
+  # 数学公式
+  math:
+    enable: true
+    specific: true
+    engine: katex
+
+  # Mermaid 流程图
+  mermaid:
+    enable: true
+    specific: true
+    options: { theme: 'default' }
+
+  # 评论系统 - Gitalk
+  # 需要你在 GitHub 创建 OAuth App 后填入 clientID 和 clientSecret
+  # 创建地址: https://github.com/settings/applications/new
+  # Homepage URL: https://lingxifeng.github.io
+  # Callback URL: https://lingxifeng.github.io
+  comments:
+    enable: true
+    type: gitalk
+
+# ---------- Gitalk 评论 ----------
+gitalk:
+  clientID: your-client-id
+  clientSecret: your-client-secret
+  repo: LingXifeng.github.io
+  owner: LingXifeng
+  admin: ['LingXifeng']
+  language: zh-CN
+  labels: ['Gitalk']
+  perPage: 10
+  pagerDirection: last
+  distractionFreeMode: false
+  createIssueManually: true
+  proxy: https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token
 
 # ---------- 归档 ----------
 archive:
@@ -79,6 +200,29 @@ about:
   icons:
     - { class: "iconfont icon-github", link: "https://github.com/LingXifeng", text: "GitHub" }
 
+# ---------- 友情链接 ----------
+links:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: "60"
+  items:
+    - {
+      title: "Fluid Blog",
+      intro: "主题博客",
+      link: "https://hexo.fluid-dev.com/",
+      avatar: "/img/favicon.png"
+    }
+    - {
+      title: "Hexo 官网",
+      intro: "Hexo 静态博客框架",
+      link: "https://hexo.io/",
+      avatar: "/img/favicon.png"
+    }
+  onerror_avatar: /img/avatar.png
+  custom:
+    enable: true
+    content: '<hr><p>想交换友链？在关于页面找到我的联系方式，按如下格式提供信息：</p><ul><li>博客名：你的博客名</li><li>简介：一句话介绍</li><li>链接：你的博客地址</li></ul>'
+
 # ---------- 页脚 ----------
 footer:
   content: '
@@ -86,10 +230,6 @@ footer:
     |
     <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="noopener">Fluid Theme</a>
   '
-
-# ---------- 分析 ----------
-statistics:
-  enable: false
 
 # ---------- 自定义 ----------
 custom_css: []

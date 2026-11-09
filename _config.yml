@@ -11,7 +11,7 @@ language: zh-CN
 timezone: 'Asia/Shanghai'
 
 # URL
-url: https://LingXifeng.github.io
+url: https://lingxifeng.github.io
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -87,3 +87,25 @@ theme: fluid
 # Deployment
 deploy:
   type: ''
+
+# ---------- 插件配置 ----------
+
+# 本地搜索
+search:
+  path: /local-search.xml
+  field: post
+  content: true
+
+# RSS 订阅
+feed:
+  enable: true
+  type: atom
+  path: /atom.xml
+  limit: 20
+  content: true
+  content_limit: 200
+  content_limit_delim: ' '
+
+# Sitemap
+sitemap:
+  path: /sitemap.xml
