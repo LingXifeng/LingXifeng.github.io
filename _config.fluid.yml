@@ -6,6 +6,19 @@ blog_title: LingXifeng
 favicon: /img/fluid.png
 apple_touch_icon: /img/fluid.png
 
+# ---------- 配色方案（基于背景图片提取）----------
+# body 背景 → 取图片天空区域平均色，浅蓝紫
+# board 背景 → 纯白，确保文章文字清晰可读
+# 暗黑模式  → 取图片暗部紫灰色调
+# 导航栏    → 取图片紫灰色调，和背景协调
+color:
+  body_bg_color: "#d6d5e6"        # 页面底色（浅蓝紫，来自图片天空区域）
+  body_bg_color_dark: "#262429"   # 暗黑模式页面底色（深紫灰）
+  navbar_bg_color: "#3a3548"      # 导航栏（紫灰，和背景协调）
+  navbar_bg_color_dark: "#1f1a2a" # 暗黑模式导航栏
+  board_color: "#ffffff"          # 正文区域（纯白，保证可读性）
+  board_color_dark: "#333037"     # 暗黑模式正文区域（深紫灰）
+
 # ---------- canonical 链接 (SEO) ----------
 # 告诉搜索引擎文章的权威地址，避免重复内容惩罚
 canonical:
