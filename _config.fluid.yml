@@ -1,0 +1,96 @@
+# Fluid 主题配置
+# 文档: https://hexo-fluid.github.io/hexo-fluid-doc/
+
+# ---------- 全局 ----------
+blog_title: LingXifeng
+
+# 导航栏
+navbar:
+  blog_title: LingXifeng
+  menu:
+    - { key: "首页", link: "/", icon: "iconfont icon-homefill" }
+    - { key: "归档", link: "/archives/", icon: "iconfont icon-archive" }
+    - { key: "分类", link: "/categories/", icon: "iconfont icon-category" }
+    - { key: "标签", link: "/tags/", icon: "iconfont icon-tag" }
+    - { key: "关于", link: "/about/", icon: "iconfont icon-user" }
+
+# ---------- 首页 ----------
+index:
+  banner_img: /img/default.png
+  banner_img_height: "80"
+  slogan:
+    text: "保持好奇，持续学习"
+    hitokoto: false
+
+  # 首页文章列表
+  post_url: false
+  post_default_bg:
+    - /img/default.png
+
+  # 介绍板块
+  intro:
+    enable: true
+    icons:
+      - { class: "iconfont icon-github", link: "https://github.com/LingXifeng", text: "GitHub" }
+    text: "你好，我是 LingXifeng。这里记录我的学习笔记和技术想法。"
+
+# ---------- 文章 ----------
+post:
+  banner_img: /img/default.png
+  banner_img_height: "60"
+  default_index_img: /img/default.png
+
+  # 目录
+  toc:
+    enable: true
+    placement: right
+
+  # 版权声明
+  copyright:
+    enable: true
+    content: '本文章采用 <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a> 许可协议'
+
+  # 自定义版权
+  custom_copyright: {}
+
+# ---------- 归档 ----------
+archive:
+  banner_img: /img/default.png
+  banner_img_height: "60"
+
+# ---------- 分类 ----------
+category:
+  banner_img: /img/default.png
+  banner_img_height: "60"
+
+# ---------- 标签 ----------
+tag:
+  banner_img: /img/default.png
+  banner_img_height: "60"
+
+# ---------- 关于 ----------
+about:
+  enable: true
+  banner_img: /img/default.png
+  banner_img_height: "60"
+  avatar: /img/avatar.png
+  name: "LingXifeng"
+  intro: "保持好奇，持续学习"
+  icons:
+    - { class: "iconfont icon-github", link: "https://github.com/LingXifeng", text: "GitHub" }
+
+# ---------- 页脚 ----------
+footer:
+  content: '
+    <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a>
+    |
+    <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="noopener">Fluid Theme</a>
+  '
+
+# ---------- 分析 ----------
+statistics:
+  enable: false
+
+# ---------- 自定义 ----------
+custom_css: []
+custom_js: []

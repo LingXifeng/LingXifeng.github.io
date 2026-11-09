@@ -1,0 +1,16 @@
+# Hexo build output
+public/
+db.json
+
+# Dependencies
+node_modules/
+
+# Misc
+.DS_Store
+Thumbs.db
+*.log
+.idea/
+.vscode/
+
+# Hexo deploy
+.deploy_git/
